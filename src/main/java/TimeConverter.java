@@ -48,9 +48,8 @@ public class TimeConverter {
         }
         if (ConverterUtil.numberRangeTens(leftSide)) {
             int ones = leftSide % 10;
-            String tensInitial = String.valueOf(leftSide);
-            String tensConverted = tensInitial.charAt(0) + "0";
-            convertedString += ConverterUtil.getTens(Integer.parseInt(tensConverted));
+            int tensConverted = leftSide-ones;
+            convertedString += ConverterUtil.getTens((tensConverted));
             convertedString += "-";
             convertedString += ConverterUtil.getOnes(ones);
             convertedString += " ";
@@ -67,9 +66,8 @@ public class TimeConverter {
         }
         if (ConverterUtil.numberRangeTens(rightSide)) {
             int ones = rightSide % 10;
-            String tensInitial = String.valueOf(rightSide);
-            String tensConverted = tensInitial.charAt(0) + "0";
-            convertedString += ConverterUtil.getTens(Integer.parseInt(tensConverted));
+           int tensConverted = rightSide -ones;
+            convertedString += ConverterUtil.getTens(tensConverted);
             convertedString += "-";
             convertedString += ConverterUtil.getOnes(ones);
         }
